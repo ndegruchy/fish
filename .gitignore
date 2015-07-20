@@ -1,3 +1,4 @@
 mount*.fish
 fishd.*
 /fish_history
+whereis*.fish
