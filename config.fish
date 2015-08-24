@@ -19,7 +19,6 @@ set -x __GL_SHADER_DISK_CACHE_PATH "$XDG_CACHE_HOME"/nv
 set -x CUDA_CACHE_PATH "$XDG_CACHE_HOME"/nv
 set -x SCREENRC "$XDG_CONFIG_HOME"/screen/screenrc
 set -x XCOMPOSEFILE "$XDG_CONFIG_HOME"/x11/xcompose
-set -x WINEPREFIX "$XDG_DATA_HOME"/wine
 set -x TERMINFO "$XDG_DATA_HOME"/terminfo
 set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 
