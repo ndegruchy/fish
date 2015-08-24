@@ -23,8 +23,9 @@ set -x WINEPREFIX "$XDG_DATA_HOME"/wine
 set -x TERMINFO "$XDG_DATA_HOME"/terminfo
 set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 
-# Misc options
-set -x SURFRAW_duckduckgo_use_javascript 1
+# Wine
+set -x WINEPREFIX "$XDG_CONFIG_HOME"/wine
+set -x WINEARCH   win32
 
 # Check for perl directories (Arch stuff)
 if [ -d /usr/bin/site_perl ]
