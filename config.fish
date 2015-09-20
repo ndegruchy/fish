@@ -22,6 +22,10 @@ set -x XCOMPOSEFILE "$XDG_CONFIG_HOME"/x11/xcompose
 set -x TERMINFO "$XDG_DATA_HOME"/terminfo
 set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 
+# Proxy settings (mainly for Chrome)
+set -x http_proxy  "127.0.0.1:8118"
+set -x https_proxy "127.0.0.1:8118"
+
 # Wine
 set -x WINEPREFIX "$XDG_CONFIG_HOME"/wine
 set -x WINEARCH   win32
