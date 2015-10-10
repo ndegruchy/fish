@@ -22,6 +22,8 @@ set -x SCREENRC "$XDG_CONFIG_HOME"/screen/screenrc
 set -x XCOMPOSEFILE "$XDG_CONFIG_HOME"/x11/xcompose
 set -x TERMINFO "$XDG_DATA_HOME"/terminfo
 set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
+# LibreOffice to use the more complete GTK2 plugin
+set -x SAL_USE_VCLPLUGIN gtk
 
 # Proxy settings (mainly for Chrome)
 set -x http_proxy  "localhost:8118"
