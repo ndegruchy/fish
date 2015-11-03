@@ -3,7 +3,7 @@ set fish_greeting "Welcome back, Commander."
 set -x EDITOR /home/ndegruchy/.local/share/bin/edit
 set -x PATH $PATH /home/ndegruchy/.gem/ruby/2.2.0/bin ~/.local/share/node_modules/bin ~/.local/share/bin
 set -x LESSSECURE 1
-set -x BROWSER /usr/bin/inox
+set -x BROWSER /usr/bin/firefox
 
 # Support XDG Locations
 set -x XDG_CONFIG_HOME $HOME/.config
