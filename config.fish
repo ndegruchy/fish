@@ -1,7 +1,7 @@
 set fish_greeting "Welcome back, Commander."
 # Emacs client script
 set -x EDITOR /home/ndegruchy/.local/share/bin/edit
-set -x PATH $PATH /home/ndegruchy/.gem/ruby/2.2.0/bin ~/.local/share/node_modules/bin ~/.local/share/bin
+set -x PATH $PATH /home/ndegruchy/.gem/ruby/2.3.0/bin ~/.local/share/node_modules/bin ~/.local/share/bin
 set -x LESSSECURE 1
 set -x BROWSER /usr/bin/firefox
 
@@ -26,8 +26,8 @@ set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 set -x SAL_USE_VCLPLUGIN gtk
 
 # Proxy settings (mainly for Chrome)
-set -x http_proxy  "localhost:8118"
-set -x https_proxy "localhost:8118"
+# set -x http_proxy  "localhost:8118"
+# set -x https_proxy "localhost:8118"
 
 # Wine
 set -x WINEPREFIX "$XDG_CONFIG_HOME"/wine
