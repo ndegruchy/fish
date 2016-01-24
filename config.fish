@@ -24,6 +24,7 @@ set -x TERMINFO "$XDG_DATA_HOME"/terminfo
 set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 # LibreOffice to use the more complete GTK2 plugin
 set -x SAL_USE_VCLPLUGIN gtk
+set -x _JAVA_OPTIONS "-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 # Proxy settings (mainly for Chrome)
 # set -x http_proxy  "localhost:8118"
