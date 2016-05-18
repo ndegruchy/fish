@@ -1,8 +1,15 @@
 set fish_greeting "Welcome back, Commander."
+
 # Emacs client script
 set -x EDITOR /home/ndegruchy/.local/share/bin/edit
+
+# Standard Path Settings
 set -x PATH $PATH /home/ndegruchy/.gem/ruby/2.3.0/bin ~/.local/share/node_modules/bin ~/.local/share/bin
+
+# Configure Less to be _more_ secure
 set -x LESSSECURE 1
+
+# Default browser
 set -x BROWSER /usr/bin/firefox
 
 # Support XDG Locations
@@ -17,13 +24,17 @@ set -x SCREENRC "$XDG_CONFIG_HOME"/screen/screenrc
 set -x WEECHAT_HOME "$XDG_CONFIG_HOME"/weechat
 set -x DVDCSS_CACHE "$XDG_DATA_HOME"/dvdcss
 set -x __GL_SHADER_DISK_CACHE_PATH "$XDG_CACHE_HOME"/nv
+set -x __GL_THREADED_OPTIMIZATIONS 1
 set -x CUDA_CACHE_PATH "$XDG_CACHE_HOME"/nv
 set -x SCREENRC "$XDG_CONFIG_HOME"/screen/screenrc
 set -x XCOMPOSEFILE "$XDG_CONFIG_HOME"/x11/xcompose
 set -x TERMINFO "$XDG_DATA_HOME"/terminfo
 set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
+
 # LibreOffice to use the more complete GTK2 plugin
 set -x SAL_USE_VCLPLUGIN gtk
+
+# Font rendering cleanup for Java apps
 set -x _JAVA_OPTIONS "-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 # Proxy settings (mainly for Chrome)
@@ -64,5 +75,7 @@ end
 if [ -d /usr/lib/mozilla/plugins ]
    set -x MOZ_PLUGIN_PATH /usr/lib/mozilla/plugins
 end
+
+sh /etc/profile.d/vte.sh
 
 eval (dircolors -c ~/.config/dircolors/dircolors | sed 's/>&\/dev\/null$//')
