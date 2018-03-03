@@ -48,6 +48,7 @@ set -x XCOMPOSEFILE "$XDG_CONFIG_HOME"/x11/xcompose
 set -x TERMINFO "$XDG_DATA_HOME"/terminfo
 set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 set -x NCMPCPP_DIRECTORY "$XDG_CONFIG_HOME"/ncmpcpp
+set -x INPUTRC "$XDG_CONFIG_HOME"/readline/inputrc
 
 # LibreOffice to use the more complete GTK2 plugin
 set -x SAL_USE_VCLPLUGIN gtk
@@ -55,10 +56,6 @@ set -x SAL_USE_VCLPLUGIN gtk
 # Font rendering cleanup for Java apps
 set -x _JAVA_OPTIONS "-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 set -x FT2_SUBPIXEL_HINTING 2
-
-# Proxy settings (mainly for Chrome)
-# set -x http_proxy  "localhost:8118"
-# set -x https_proxy "localhost:8118"
 
 # Wine
 set -x WINEPREFIX "$XDG_CONFIG_HOME"/wine
