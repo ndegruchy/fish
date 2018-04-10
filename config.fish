@@ -49,9 +49,10 @@ set -x TERMINFO "$XDG_DATA_HOME"/terminfo
 set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 set -x NCMPCPP_DIRECTORY "$XDG_CONFIG_HOME"/ncmpcpp
 set -x INPUTRC "$XDG_CONFIG_HOME"/readline/inputrc
+set -x BROWSER chromium
 
 # LibreOffice to use the more complete GTK2 plugin
-set -x SAL_USE_VCLPLUGIN gtk
+set -x SAL_USE_VCLPLUGIN gtk3
 
 # Font rendering cleanup for Java apps
 set -x _JAVA_OPTIONS "-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
@@ -92,7 +93,7 @@ if [ -d /usr/lib/mozilla/plugins ]
    set -x MOZ_PLUGIN_PATH /usr/lib/mozilla/plugins
 end
 
-# eval (dircolors -c ~/.config/dircolors/dircolors | sed 's/>&\/dev\/null$//')
+eval (dircolors -c ~/.config/dircolors/dircolors | sed 's/>&\/dev\/null$//')
 
 # ALSA
 
