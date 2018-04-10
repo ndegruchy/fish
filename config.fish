@@ -1,7 +1,9 @@
 set fish_greeting "Welcome back, Commander."
 
 # Emacs client script
-set -x EDITOR /home/ndegruchy/.local/share/bin/emc
+if [-d /home/ndegruchy/.local/share/bin/emc]
+    set -x EDITOR /home/ndegruchy/.local/share/bin/emc
+end
 
 # Ruby gems
 if [ -d (ruby -e "print Gem.user_dir")/bin ]
@@ -27,7 +29,8 @@ end
 set -x LESSSECURE 1
 
 # Default browser
-set -x BROWSER /usr/bin/firefox
+# set -x BROWSER /usr/bin/firefox
+set -x BROWSER /usr/bin/chromium
 
 # Support XDG Locations
 set -x XDG_CONFIG_HOME $HOME/.config
@@ -49,7 +52,7 @@ set -x TERMINFO "$XDG_DATA_HOME"/terminfo
 set -x TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 set -x NCMPCPP_DIRECTORY "$XDG_CONFIG_HOME"/ncmpcpp
 set -x INPUTRC "$XDG_CONFIG_HOME"/readline/inputrc
-set -x BROWSER chromium
+
 
 # LibreOffice to use the more complete GTK2 plugin
 set -x SAL_USE_VCLPLUGIN gtk3
