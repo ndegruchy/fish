@@ -1,8 +1,15 @@
 set fish_greeting "Welcome back, Commander."
 
-# Emacs client script
-if [-d /home/ndegruchy/.local/share/bin/emc]
-    set -x EDITOR /home/ndegruchy/.local/share/bin/emc
+# Editor
+if [ -f /usr/bin/kate ]
+	set -x EDITOR /usr/bin/kate
+	set -x SUDO_EDITOR /usr/bin/kate
+else if [ -f /home/ndegruchy/.local/share/bin/emc ]
+	set -x EDITOR /home/ndegruchy/.local/share/bin/emc
+	set -x SUDO_EDITOR /home/ndegruchy/.local/share/bin/emc
+else
+	set -x EDITOR /usr/bin/nano
+	set -x SUDO_EDITOR /usr/bin/nano
 end
 
 # Ruby gems
@@ -29,8 +36,8 @@ end
 set -x LESSSECURE 1
 
 # Default browser
-# set -x BROWSER /usr/bin/firefox
-set -x BROWSER /usr/bin/chromium
+set -x BROWSER /usr/bin/firefox
+# set -x BROWSER /usr/bin/chromium
 
 # Support XDG Locations
 set -x XDG_CONFIG_HOME $HOME/.config
@@ -55,7 +62,7 @@ set -x INPUTRC "$XDG_CONFIG_HOME"/readline/inputrc
 
 
 # LibreOffice to use the more complete GTK2 plugin
-set -x SAL_USE_VCLPLUGIN gtk3
+set -x SAL_USE_VCLPLUGIN gtk
 
 # Font rendering cleanup for Java apps
 set -x _JAVA_OPTIONS "-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
@@ -64,6 +71,7 @@ set -x FT2_SUBPIXEL_HINTING 2
 # Wine
 set -x WINEPREFIX "$XDG_CONFIG_HOME"/wine
 set -x WINEARCH   win32
+set -x WINEDLLOVERRIDES "winemenubuilder.exe=d"
 
 # Check for perl directories (Arch stuff)
 if [ -d /usr/bin/site_perl ]
@@ -101,3 +109,31 @@ eval (dircolors -c ~/.config/dircolors/dircolors | sed 's/>&\/dev\/null$//')
 # ALSA
 
 set -x ALSA_CARD Headset
+
+
+# ST fixes
+if status is-interactive
+    switch $TERM
+
+        # Fix DEL key in st
+        case 'st*'
+            set -gx is_simple_terminal 1
+
+        case "linux"
+            set -ex is_simple_terminal
+            function fish_prompt
+                fish_fallback_prompt
+            end
+    end
+
+    if set -q is_simple_terminal
+        tput smkx ^/dev/null
+        function fish_enable_keypad_transmit --on-event fish_postexec
+            tput smkx ^/dev/null
+        end
+
+        function fish_disable_keypad_transmit --on-event fish_preexec
+            tput rmkx ^/dev/null
+        end
+    end
+end
