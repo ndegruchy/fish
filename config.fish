@@ -61,10 +61,6 @@ set -x WINEDEBUG -all
 set -x __GL_SYNC_TO_VBLANK 0
 set -x __GL_YIELD "NOTHING"
 
-# VSCode
-set -x VSCODE_EXTENSION_DIR "$HOME/.config/Code - OSS/User/extensions/"
-set -x VSCODE_USER_DATA_DIR "$HOME/.config/Code - OSS/User/"
-
 # Editor
 if [ -f /home/ndegruchy/.local/bin/emc ]
     set -x EDITOR /home/ndegruchy/.local/bin/emc
