@@ -163,6 +163,7 @@ end
 set -x ALSA_CARD Headset
 
 # Fixes for SimpleTerminal
+# Stolen shamelessly from: https://github.com/fish-shell/fish-shell/issues/2139#issuecomment-305506138
 if status is-interactive
     switch $TERM
 
