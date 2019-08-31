@@ -46,6 +46,11 @@ set -gx __GL_THREADED_OPTIMIZATIONS 1
 set -x OFFICIAL_PACKAGE_LIST "/etc/pkglist.txt"
 set -x MY_AUR_LIST "$HOME/Documents/aur_packages.txt"
 
+# Fisher/Pure overrides
+set -gx PURE_SYMBOL_PROMPT '»'
+set -gx PURE_GIT_DOWN_ARROW '↓'
+set -gx PURE_GIT_UP_ARROW '↑'
+
 # Disable accessibility services
 set -x NO_AT_BRIDGE 1
 
