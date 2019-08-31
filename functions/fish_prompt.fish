@@ -13,9 +13,9 @@ set __fish_git_prompt_char_dirtystate '*'
 set __fish_git_prompt_char_stagedstate ' '
 set __fish_git_prompt_char_upstream_prefix ' '
 set __fish_git_prompt_char_upstream_equal ''
-set __fish_git_prompt_char_upstream_ahead '↑'
-set __fish_git_prompt_char_upstream_behind '↓'
-set __fish_git_prompt_char_upstream_diverged '↑↓'
+set __fish_git_prompt_char_upstream_ahead 'a'
+set __fish_git_prompt_char_upstream_behind 'b'
+set __fish_git_prompt_char_upstream_diverged 'd'
 
 function _print_in_color
   set -l string $argv[1]
