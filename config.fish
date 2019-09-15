@@ -43,13 +43,10 @@ set -gx __GL_SHADER_DISK_CACHE_PATH "$XDG_CACHE_HOME"/nv
 set -gx __GL_THREADED_OPTIMIZATIONS 1
 
 # Packages
-set -x OFFICIAL_PACKAGE_LIST "/etc/pkglist.txt"
-set -x MY_AUR_LIST "$HOME/Documents/aur_packages.txt"
-
-# Fisher/Pure overrides
-set -gx PURE_SYMBOL_PROMPT '»'
-set -gx PURE_GIT_DOWN_ARROW '↓'
-set -gx PURE_GIT_UP_ARROW '↑'
+if [ -x /usr/bin/pacman ]
+    set -x OFFICIAL_PACKAGE_LIST "/etc/pkglist.txt"
+    set -x MY_AUR_LIST "$HOME/Documents/aur_packages.txt"
+end
 
 # Disable accessibility services
 set -x NO_AT_BRIDGE 1
