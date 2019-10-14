@@ -1,0 +1,1 @@
+/home/ndegruchy/.config/fish/functions/theme-pure/fish_title.fish

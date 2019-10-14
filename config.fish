@@ -35,7 +35,6 @@ set -gx SCREENRC "$XDG_CONFIG_HOME"/screen/screenrc
 set -gx TERMINFO "$XDG_DATA_HOME"/terminfo
 set -gx TERMINFO_DIRS "$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 set -gx WEECHAT_HOME "$XDG_CONFIG_HOME"/weechat
-# set -gx XAUTHORITY "$XDG_RUNTIME_DIR"/Xauthority # Doesn't seem to do anything but make xsessions fail to load
 set -gx XCOMPOSECACHE "$XDG_CACHE_HOME"/X11/xcompose
 set -gx XCOMPOSEFILE "$XDG_CONFIG_HOME"/X11/xcompose
 set -gx XDG_SESSION_COOKIE "$XDG_CACHE_HOME"/dbus
@@ -64,14 +63,14 @@ set -x __GL_SYNC_TO_VBLANK 0
 set -x __GL_YIELD "NOTHING"
 
 # Editor
-if [ -f /home/ndegruchy/.local/bin/emc ]
+if [ -f /home/ndegruchy/.local/bin/emc -a -x /usr/bin/emacs ]
     set -x EDITOR /home/ndegruchy/.local/bin/emc
     set -x VISUAL /home/ndegruchy/.local/bin/emc
     set -x SUDO_EDITOR /home/ndegruchy/.local/bin/emc
 else if [ -f /usr/bin/kate ]
-    set -x EDITOR /usr/bin/kate
-    set -x VISUAL /usr/bin/kate
-    set -x SUDO_EDITOR /usr/bin/kate
+    set -x EDITOR /usr/bin/kate -b
+    set -x VISUAL /usr/bin/kate -b
+    set -x SUDO_EDITOR /usr/bin/kate -b
 else
     set -x EDITOR /usr/bin/nano
     set -x VISUAL /usr/bin/nano
@@ -191,3 +190,7 @@ if status is-interactive
         end
     end
 end
+
+# THEME PURE #
+set fish_function_path /home/ndegruchy/.config/fish/functions/theme-pure/functions/ $fish_function_path
+source /home/ndegruchy/.config/fish/functions/theme-pure/conf.d/pure.fish
