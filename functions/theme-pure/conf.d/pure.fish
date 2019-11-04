@@ -12,8 +12,8 @@ _pure_set_default pure_color_warning (set_color yellow)
 _pure_set_default pure_color_dark (set_color black)
 
 # Prompt
-_pure_set_default pure_symbol_prompt "❯"
-_pure_set_default pure_symbol_reverse_prompt "❮"  # used for VI mode
+_pure_set_default pure_symbol_prompt ">"
+_pure_set_default pure_symbol_reverse_prompt "<"  # used for VI mode
 _pure_set_default pure_color_prompt_on_error $pure_color_danger
 _pure_set_default pure_color_prompt_on_success $pure_color_success
 
@@ -21,8 +21,8 @@ _pure_set_default pure_color_prompt_on_success $pure_color_success
 _pure_set_default pure_color_current_directory $pure_color_primary
 
 # Git
-_pure_set_default pure_symbol_git_unpulled_commits "⇣"
-_pure_set_default pure_symbol_git_unpushed_commits "⇡"
+_pure_set_default pure_symbol_git_unpulled_commits "^"
+_pure_set_default pure_symbol_git_unpushed_commits "v"
 _pure_set_default pure_symbol_git_dirty "*"
 _pure_set_default pure_color_git_unpulled_commits $pure_color_info
 _pure_set_default pure_color_git_unpushed_commits $pure_color_info
