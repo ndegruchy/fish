@@ -28,6 +28,8 @@ if status is-interactive
     end
 end
 
-# THEME PURE #
-set fish_function_path /home/ndegruchy/.config/fish/functions/theme-pure/functions/ $fish_function_path
-source /home/ndegruchy/.config/fish/functions/theme-pure/conf.d/pure.fish
+# Base16 Shell
+if status --is-interactive
+    set BASE16_SHELL "$HOME/.config/base16-shell/"
+    source "$BASE16_SHELL/profile_helper.fish"
+end
