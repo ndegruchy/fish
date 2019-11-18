@@ -2,7 +2,7 @@ set fish_greeting "Welcome back, Commander."
 
 # Fixes for SimpleTerminal
 # Stolen shamelessly from: https://github.com/fish-shell/fish-shell/issues/2139#issuecomment-305506138
-if status is-interactive
+if status --is-interactive
     switch $TERM
 
         # Fix DEL key in st
