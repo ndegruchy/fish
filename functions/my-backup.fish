@@ -16,7 +16,7 @@ function my-backup -d "Runs through various backups"
 
     # What to back up
     # Home Dir Top Level
-    set -x BACKUP_FILES Documents Pictures .config .local .gnupg .xprofile .profile
+    set -x BACKUP_FILES Documents Pictures .config .local .gnupg
     # Home misc
     if [ -d $HOME/.local/share/Steam/userdata/9974372/ ]
         set -a BACKUP_FILES $HOME/.local/share/Steam/userdata/9974372/
@@ -51,7 +51,6 @@ function my-backup -d "Runs through various backups"
     # Clean up old backups
     echo "Pruning..."
     borg prune --list --keep-daily 7 --keep-weekly 4 --keep-monthly 6 /mnt/backups/degruchy/
-    borg prune --list --keep-yearly 1 /mnt/backups/iPhoneBackups/
 
     echo "Unmounting backup. You may need your password again."
     sudo umount /mnt/backups
