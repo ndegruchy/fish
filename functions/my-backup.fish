@@ -27,8 +27,8 @@ function my-backup -d "Runs through various backups"
     end
 
     # Emacs
-    if [ -e /usr/share/emacs/site-lisp/default.el ]
-        set -a BACKUP_FILES /usr/share/emacs/site-lisp/default.el
+    if [ -d /usr/share/emacs/site-lisp/ ]
+        set -a BACKUP_FILES /usr/share/emacs/site-lisp/
     end
 
     # Go home, for context
