@@ -16,15 +16,7 @@ function my-backup -d "Runs through various backups"
 
     # What to back up
     # Home Dir Top Level
-    set -x BACKUP_FILES Documents Pictures .config .local .gnupg
-    # Home misc
-    if [ -d $HOME/.local/share/Steam/userdata/9974372/ ]
-        set -a BACKUP_FILES $HOME/.local/share/Steam/userdata/9974372/
-    end
-    # Etc
-    if [ -e /etc/pacman.conf -a -e /etc/makepkg.conf ]
-        set -a BACKUP_FILES /etc/pacman.conf /etc/makepkg.conf
-    end
+    set -x BACKUP_FILES Documents Pictures .config .local .gnupg .ssh
 
     # Emacs
     if [ -d /usr/share/emacs/site-lisp/ ]
