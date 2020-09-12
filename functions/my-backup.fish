@@ -12,7 +12,12 @@ function my-backup -d "Runs through various backups"
     # Save the current directory
     set -x CURRENT_DIR (pwd)
 
-    set -x NOTIFY_ICON "/usr/share/icons/breeze-dark/devices/64/drive-harddisk.svg"
+	# Check for the icon for notifications
+	if [ -d /usr/share/icons/breeze-dark/devices/ ]
+	    set -x NOTIFY_ICON "/usr/share/icons/breeze-dark/devices/64/drive-harddisk.svg"
+	else
+		set -x NOTIFY_ICON ""
+	end
 
     # What to back up
     # Home Dir Top Level
@@ -62,8 +67,6 @@ function my-backup -d "Runs through various backups"
     set -e CURRENT_DIR
     set -e BORG_PASSCOMMAND
     set -e BACKUP_FILES
-    set -e IS_PHONE_PLUGGED
-    set -e PHONETEMP
     set -e NOTIFY_ICON
     set -e BACKUPPW
 end
